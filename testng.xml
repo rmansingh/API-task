@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--Executing the uiTest cases in parallel with max thread count of 3-->
+<suite name="Car2go Test Suite" parallel="classes" thread-count="3">
+    <test name="Car2go UI tests">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="os" value="mac"/>
+        <classes>
+            <class name="com.car2go.uiTest.LoginTest"/>
+            <class name="com.car2go.uiTest.EditUserDetailsTest"/>
+            <class name="com.car2go.uiTest.TripsAndInvoicesTest"/>
+        </classes>
+    </test>
+    <test name="Car2go API tests">
+        <classes>
+            <class name="com.car2go.apiTest.InteriorLightsFrontTest"/>
+            <class name="com.car2go.apiTest.FrontRightDoorResourceTest"/>
+        </classes>
+    </test>
+</suite>
